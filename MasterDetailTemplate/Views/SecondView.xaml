@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:utility="clr-namespace:MasterDetailTemplate.Utility;assembly=MasterDetailTemplate" 
+             utility:ViewModelLocator.AutoWireViewModel="True" 
+             x:Class="MasterDetailTemplate.Views.SecondView">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Text="Show Detail View" TextColor="White" BackgroundColor="#00A6FF" Padding="10" Command="{Binding ShowDetailCommand}"/>
+            <Button Text="Show Modal View" TextColor="White" BackgroundColor="#00A6FF" Padding="10" Command="{Binding ShowModalCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
