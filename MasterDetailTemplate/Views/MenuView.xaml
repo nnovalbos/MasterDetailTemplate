@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:utility="clr-namespace:MasterDetailTemplate.Utility;assembly=MasterDetailTemplate"
+             xmlns:customrenders="clr-namespace:MasterDetailTemplate.CustomRenders;assembly=MasterDetailTemplate"
              utility:ViewModelLocator.AutoWireViewModel="True"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:behaviors="clr-namespace:MasterDetailTemplate.Behaviors"
@@ -44,22 +45,22 @@
             <Label Text="{Binding UserName}" FontSize="12" TextColor="White" HorizontalTextAlignment="Center" Margin="0,5,0,0"/>
         </StackLayout>
       
-            <ListView Grid.Row="1" ItemsSource="{Binding MenuItems}"  CachingStrategy="RecycleElement"
-                SeparatorVisibility="None" HasUnevenRows="True" >
+            <ListView Grid.Row="1" ItemsSource="{Binding MenuItems}" BackgroundColor="White" SelectedItem="{Binding SelectedItem}"
+                SeparatorVisibility="None" HasUnevenRows="false">
                 <ListView.Behaviors>
                     <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding MenuItemTappedCommand}"></behaviors:EventToCommandBehavior>
                 </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
+                        <customrenders:CustomViewCell SelectedBackgroundColor="Silver" ItemIdentifier= "{Binding MenuItemTitle}" >
                             <Label Text="{Binding MenuItemTitle}" Margin="10"/>
-                        </ViewCell>
+                        </customrenders:CustomViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         
         <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-            <Label  Text="Sign Out" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="0,0,0,5">
+            <Label Text="Sign Out" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="0,0,0,5">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SignOutCommand}" NumberOfTapsRequired="1" />
                 </Label.GestureRecognizers>

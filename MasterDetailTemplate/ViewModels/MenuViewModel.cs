@@ -13,6 +13,7 @@ namespace MasterDetailTemplate.ViewModels
         #region Attributes
         private ObservableCollection<MasterDetailMenuItem> _menuItems;
         private ISettingsService _settingsService;
+        private MasterDetailMenuItem _selectedItem;
         #endregion
 
         public MenuViewModel(INavigationService navigationService,
@@ -43,6 +44,17 @@ namespace MasterDetailTemplate.ViewModels
         {
             get => "default_user.png";
         }
+
+        public MasterDetailMenuItem SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Commands
