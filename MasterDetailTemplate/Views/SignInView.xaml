@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:utility="clr-namespace:MasterDetailTemplate.Utility;assembly=MasterDetailTemplate" 
-             utility:ViewModelLocator.AutoWireViewModel="True" 
+             utility:ViewModelLocator.AutoWireViewModel="True"
              x:Class="MasterDetailTemplate.Views.SignInView">
     <ContentPage.Content>
         <ScrollView>
@@ -22,13 +22,13 @@
                     </StackLayout>
                     <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" WidthRequest="200" Margin="25">
                         <Label Text="Username" />
-                        <Entry Keyboard="Chat" Placeholder="Enter username" Text="{Binding UserName}">
-                        </Entry>
+                        <Entry Placeholder="Enter new user" AutomationId="newEntry2" Text="Test"/>
+                         <Entry Placeholder="Enter new user" AutomationId="newEntry" Text="{Binding UserName}"/>
                         <Label Text="Password" />
-                        <Entry IsPassword="true" Placeholder="Enter password" Text="{Binding UserPassword}">
+                        <Entry IsPassword="true" Placeholder="Enter password" AutomationId="passwordEntry" Text="{Binding UserPassword}">
                         </Entry>
                         
-                        <Button Text="ENTER" BackgroundColor="#00A6FF" TextColor="White" Margin="20" Command="{Binding SigInCommand}">
+                        <Button Text="ENTER" BackgroundColor="#00A6FF" TextColor="White" AutomationId="enterButton" Margin="20" Command="{Binding SigInCommand}">
                         </Button>
                     </StackLayout>
                 </Grid> 

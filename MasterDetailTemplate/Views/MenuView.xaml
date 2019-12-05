@@ -29,7 +29,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
-    <Grid RowSpacing="0" Style="{StaticResource BorderStyle}">
+    <Grid RowSpacing="0" Style="{StaticResource BorderStyle}" AutomationId="menuViewGrid">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="35*" />

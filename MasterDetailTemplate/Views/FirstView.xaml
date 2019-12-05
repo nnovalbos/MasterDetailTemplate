@@ -6,7 +6,7 @@
              x:Class="MasterDetailTemplate.Views.FirstView">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="View 1" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label AutomationId="LabelViewOne" Text="View 1" HorizontalOptions="Center" VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
